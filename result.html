@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Resume Details</title>
+  <div class="logo-top-left">
+  <img src="{{ url_for('static', filename='background images/logo.jpg') }}" alt="AI Resume Ranker Logo" class="logo">
+</div>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 700px;
+    }
+.logo-container {
+  text-align: center;
+  margin-left: right
+  ;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+
+}
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    strong {
+      color: #2f8bfd;
+    }
+
+    .resume-box {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 14px;
+      max-height: 250px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      text-decoration: none;
+      color: #2f8bfd;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      height: 24px;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      text-align: center;
+      line-height: 24px;
+      font-weight: bold;
+    }
+
+    .highlight-box {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 5px solid #2f8bfd;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Extracted Resume Information</h2>
+    <ul>
+      <li><strong>Name:</strong> {{ data.name }}</li>
+      <li><strong>Email:</strong> {{ data.email }}</li>
+      <li><strong>Phone:</strong> {{ data.mobile_number }}</li>
+      <li><strong>Skills:</strong> {{ data.skills }}</li>
+      <li><strong>Company:</strong> {{ data.company_name }}</li>
+      <li><strong>College:</strong> {{ data.college_name }}</li>
+      <li><strong>Experience:</strong> {{ data.total_experience }}</li>
+      <li><strong>Designation:</strong> {{ data.designation }}</li>
+      <li><strong>Match Score:</strong> {{ data.score | default(0) | int }}%</li>
+      <li>
+        <div class="progress-bar">
+  <div class="progress" id="scoreBar">
+    {{ data.score | default(0) | int }}%
+  </div>
+</div>
+
+<script>
+  document.getElementById("scoreBar").style.width = "{{ data.score | default(0) | int }}%";
+</script>
+
+
+      </li>
+      <li class="highlight-box"><strong>Matched Skills:</strong> {{ data.matched_skills }}</li>
+      <li class="highlight-box"><strong>Missing Skills:</strong> {{ data.missing_skills }}</li>
+      <li><strong>Resume Text:</strong>
+        <div class="resume-box">{{ data.resume_text }}</div>
+      </li>
+    </ul>
+    <a href="/" class="back-link">⬅️ Upload Another Resume</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("background\ images/background1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+.logo-container {
+  text-align: center;
+  margin-left: right
+  ;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+.logo-top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.logo-top-left img {
+  height: 100px;
+  width: auto;
+}
+
+  
+/* Container Box */
+.container {
+  background: rgba(255, 255, 255, 0.92); /* semi-transparent white */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 720px;
+  backdrop-filter: blur(8px);
+}
+.upload-container h2 {
+  margin-bottom: 25px;
+  color: #ffffff;
+  font-size: 30px;
+ 
+}
+/* Heading */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 120px;
+  margin-bottom: 30px;
+}
+
+/* Data List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #333;
+}
+
+strong {
+  color: #2f8bfd;
+  font-weight: 600;
+}
+
+/* Resume Text Box */
+.resume-box {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+  max-height: 250px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 1px solid #ddd;
+}
+
+/* Back Button */
+.back-link {
+  display: inline-block;
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background: #000000;
+  color: rgb(236, 176, 176);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.back-link:hover {
+  background: #000000;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 24px;
+  margin: 8px 0 15px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+/* Highlight Skill Boxes */
+.highlight-box {
+  background: #eef6ff;
+  padding: 12px;
+  border-left: 5px solid #2f8bfd;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #333;
+}
+.file-input {
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.upload-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #1d6fe5;
+}
